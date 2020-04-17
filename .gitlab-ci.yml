@@ -1,0 +1,40 @@
+image: archlinux/base
+
+
+stages:
+    - format
+    - builds
+    - tests
+
+
+format:
+    stage: format
+    before_script:
+    - pacman -Sy --noconfirm
+    - pacman -S rust diffutils gawk grep --noconfirm
+    script:
+    - for i in $( du -a . | awk '{print $2}' | grep -i ".rs$" ); do
+    - cp $i temp.txt
+    - rustfmt $i
+    - cmp $i temp.txt
+    - done
+
+
+quicksort-build:
+    stage: builds
+    before_script:
+        - pacman -Sy --noconfirm
+        - pacman -S base-devel libffi rust --noconfirm
+    script:
+        - cd quicksort
+        - cargo build
+
+
+quicksort-tests:
+    stage: tests
+    before_script:
+        - pacman -Sy --noconfirm
+        - pacman -S base-devel libffi rust --noconfirm
+    script:
+        - cd quicksort
+        - cargo test
