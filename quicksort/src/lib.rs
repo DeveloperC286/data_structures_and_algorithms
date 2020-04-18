@@ -1,6 +1,3 @@
-#[macro_use]
-extern crate log;
-
 pub fn quicksort(to_sort: Vec<i32>) -> Vec<i32> {
     if to_sort.len() > 2 {
         let ending_index = to_sort.len() - 1;
@@ -34,12 +31,6 @@ fn sort_partition(
     starting_index: usize,
     ending_index: usize,
 ) -> (usize, Vec<i32>) {
-    trace!(
-        "starting_index {}, ending_index {}.",
-        starting_index,
-        ending_index
-    );
-    debug!("Partitioning {:?}.", to_sort);
     let pivot = to_sort[ending_index];
     let mut i = starting_index;
 
@@ -47,7 +38,6 @@ fn sort_partition(
         if to_sort[j] < pivot {
             if i != j {
                 to_sort.swap(i, j);
-                trace!("[{}] & [{}] switched {:?}", i, j, to_sort);
             }
             i += 1;
         }
@@ -55,12 +45,8 @@ fn sort_partition(
 
     to_sort.swap(i, ending_index);
 
-    debug!("Finished partitioning {:?}.", to_sort);
     return (i, to_sort);
 }
-
-#[cfg(test)]
-extern crate pretty_env_logger;
 
 #[cfg(test)]
 extern crate proptest;
