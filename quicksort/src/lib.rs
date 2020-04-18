@@ -37,17 +37,13 @@ fn sort_partition(
         if to_sort[j as usize] < pivot {
             i += 1;
 
-            let temp = to_sort[i as usize];
-            to_sort[i as usize] = to_sort[j as usize];
-            to_sort[j as usize] = temp;
+            to_sort.swap(i as usize, j as usize);
             trace!("[{}] & [{}] switched {:?}", i, j, to_sort);
         }
     }
 
     i += 1;
-    let temp = to_sort[i as usize];
-    to_sort[i as usize] = to_sort[ending_index as usize];
-    to_sort[ending_index as usize] = temp;
+    to_sort.swap(i as usize, ending_index as usize);
 
     debug!("Finished partitioning {:?}.", to_sort);
     return (i, to_sort);
