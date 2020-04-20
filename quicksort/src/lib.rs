@@ -13,14 +13,22 @@ fn quicksort_internal(
     ending_index: usize,
 ) -> Vec<i32> {
     if starting_index < ending_index {
-        let (pivot_point_index, partitioned_to_sort) =
+        let (pivot_point_index, temp_to_sort) =
             sort_partition(to_sort, starting_index, ending_index);
-        to_sort = partitioned_to_sort;
+        to_sort = temp_to_sort;
 
         if pivot_point_index > 0 {
-            to_sort = quicksort_internal(to_sort, starting_index, pivot_point_index - 1);
+            let pivot_point_index_end = pivot_point_index - 1;
+
+            if pivot_point_index_end as i32 - starting_index as i32 > 0 {
+                to_sort = quicksort_internal(to_sort, starting_index, pivot_point_index_end);
+            }
         }
-        to_sort = quicksort_internal(to_sort, pivot_point_index + 1, ending_index);
+
+        let pivot_point_index_start = pivot_point_index + 1;
+        if ending_index as i32 - pivot_point_index_start as i32 > 0 {
+            to_sort = quicksort_internal(to_sort, pivot_point_index_start, ending_index);
+        }
     }
 
     return to_sort;
