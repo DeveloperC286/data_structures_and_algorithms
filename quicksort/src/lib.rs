@@ -4,7 +4,7 @@ pub fn quicksort(to_sort: Vec<i32>) -> Vec<i32> {
         return quicksort_internal(to_sort, 0, ending_index);
     }
 
-    return to_sort;
+    to_sort
 }
 
 fn quicksort_internal(
@@ -26,7 +26,7 @@ fn quicksort_internal(
         }
     }
 
-    return to_sort;
+    to_sort
 }
 
 fn sort_partition(
@@ -48,7 +48,7 @@ fn sort_partition(
 
     to_sort.swap(i, ending_index);
 
-    return (i, to_sort);
+    (i, to_sort)
 }
 
 #[cfg(test)]
