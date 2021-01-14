@@ -1,3 +1,8 @@
+use proptest::prelude::*;
+use rand::Rng;
+use std::collections::HashSet;
+use std::hash::Hash;
+
 use super::*;
 
 #[test]
@@ -21,9 +26,9 @@ fn test_single_vector() {
 }
 
 #[test]
-fn test_in_sorted_array() {
+fn test_in_sorted_vector() {
     // Given
-    let searching = vec![-7, -1 , 0, 2, 3, 5 ,8, 11, 23, 31];
+    let searching = vec![-7, -1, 0, 2, 3, 5, 8, 11, 23, 31];
     let searching_for = 3;
 
     // When/Then
@@ -31,11 +36,43 @@ fn test_in_sorted_array() {
 }
 
 #[test]
-fn test_not_in_sorted_array() {
+fn test_double_vector() {
     // Given
-    let searching = vec![-7, -1 , 0, 2, 3, 5 ,8, 11, 23, 31];
+    let searching = vec![3, 4];
+    let searching_for = 3;
+
+    // When/Then
+    assert_eq!(Some(0), binary_search(searching, searching_for));
+}
+
+#[test]
+fn test_not_in_sorted_vector() {
+    // Given
+    let searching = vec![-7, -1, 0, 2, 3, 5, 8, 11, 23, 31];
     let searching_for = 4;
 
     // When/Then
     assert_eq!(None, binary_search(searching, searching_for));
+}
+
+proptest! {
+    #[test]
+    fn test_binary_search(mut searching in prop::collection::vec(0i32..1000, 0..1000)) {
+        if !searching.is_empty() {
+            // Given
+            dedup(&mut searching);
+            searching.sort_unstable();
+            let mut rng = rand::thread_rng();
+            let expected_index = rng.gen_range(0..searching.len());
+            let searching_for = searching[expected_index];
+
+            // When/Then
+            assert_eq!(Some(expected_index), binary_search(searching, searching_for));
+        }
+    }
+}
+
+fn dedup<T: Eq + Hash + Copy>(v: &mut Vec<T>) {
+    let mut uniques = HashSet::new();
+    v.retain(|e| uniques.insert(*e));
 }
