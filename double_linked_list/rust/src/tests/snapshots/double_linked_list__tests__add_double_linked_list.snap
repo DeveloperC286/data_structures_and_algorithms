@@ -1,0 +1,12 @@
+---
+source: src/tests/mod.rs
+expression: double_linked_list
+---
+{
+  "length": 1,
+  "head": {
+    "next": null,
+    "previous": null,
+    "value": 5
+  }
+}
