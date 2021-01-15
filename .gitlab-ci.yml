@@ -20,5 +20,5 @@ conventional-commits-linting:
 
 
 include:
-  - local: .gitlab/ci/quicksort.yml
+  - local: .gitlab/ci/quicksort/rust.yml
   - local: .gitlab/ci/binary_search/rust.yml

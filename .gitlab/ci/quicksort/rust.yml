@@ -4,7 +4,7 @@ quicksort-formatting:
   before_script:
     - rustup component add rustfmt
   script:
-    - cd quicksort
+    - cd quicksort/rust/
     - cargo fmt --all -- --check
   rules:
     - if: $CI_MERGE_REQUEST_ID
@@ -16,7 +16,7 @@ quicksort-linting:
   before_script:
     - rustup component add clippy
   script:
-    - cd quicksort
+    - cd quicksort/rust/
     - cargo clippy --verbose --workspace --all-targets -- -D warnings
     - cargo clippy --verbose --workspace --all-targets --all-features -- -D warnings
     - cargo clippy --verbose --workspace --all-targets --no-default-features -- -D warnings
@@ -28,7 +28,7 @@ quicksort-compiling:
   stage: compiling
   image: rust
   script:
-    - cd quicksort
+    - cd quicksort/rust/
     - cargo build
   rules:
     - if: $CI_MERGE_REQUEST_ID
@@ -39,7 +39,7 @@ quicksort-unit-testing:
   stage: unit-testing
   image: rust
   script:
-    - cd quicksort
+    - cd quicksort/rust/
     - cargo test --verbose --workspace
     - cargo test --verbose --workspace --all-features
     - cargo test --verbose --workspace --no-default-features
