@@ -1,7 +1,5 @@
 use proptest::prelude::*;
 use rand::Rng;
-use std::collections::HashSet;
-use std::hash::Hash;
 
 use super::*;
 
@@ -57,22 +55,16 @@ fn test_not_in_sorted_vector() {
 
 proptest! {
     #[test]
-    fn test_binary_search(mut searching in prop::collection::vec(0i32..1000, 0..1000)) {
-        if !searching.is_empty() {
-            // Given
-            dedup(&mut searching);
-            searching.sort_unstable();
-            let mut rng = rand::thread_rng();
-            let expected_index = rng.gen_range(0..searching.len());
-            let searching_for = searching[expected_index];
+    fn test_binary_search(mut searching in prop::collection::vec(-1000000i32..1000000, 1..10000)) {
+        // Given
+        searching.sort_unstable();
+        searching.dedup();
 
-            // When/Then
-            assert_eq!(Some(expected_index), binary_search(searching, searching_for));
-        }
+        let mut rng = rand::thread_rng();
+        let expected_index = rng.gen_range(0..searching.len());
+        let searching_for = searching[expected_index];
+
+        // When/Then
+        assert_eq!(Some(expected_index), binary_search(searching, searching_for));
     }
-}
-
-fn dedup<T: Eq + Hash + Copy>(v: &mut Vec<T>) {
-    let mut uniques = HashSet::new();
-    v.retain(|e| uniques.insert(*e));
 }
