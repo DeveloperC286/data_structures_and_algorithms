@@ -55,7 +55,7 @@ fn test_not_in_sorted_vector() {
 
 proptest! {
     #[test]
-    fn test_binary_search(mut searching in prop::collection::vec(-1000000i32..1000000, 1..10000)) {
+    fn test_binary_search_finds_it(mut searching in prop::collection::vec(-1000000i32..1000000, 1..10000)) {
         // Given
         searching.sort_unstable();
         searching.dedup();
@@ -66,5 +66,22 @@ proptest! {
 
         // When/Then
         assert_eq!(Some(expected_index), binary_search(searching, searching_for));
+    }
+
+    #[test]
+    fn test_binary_search_does_not_find_it(mut searching in prop::collection::vec(-1000000i32..1000000, 1..10000)) {
+        // Given
+        searching.sort_unstable();
+        searching.dedup();
+
+        let mut rng = rand::thread_rng();
+        let mut searching_for = rng.gen_range(-1000000i32..1000000);
+
+        while searching.contains(&searching_for) {
+            searching_for = rng.gen_range(-1000000i32..1000000);
+        }
+
+        // When/Then
+        assert_eq!(None, binary_search(searching, searching_for));
     }
 }
