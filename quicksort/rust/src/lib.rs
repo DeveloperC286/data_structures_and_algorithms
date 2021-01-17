@@ -1,5 +1,5 @@
 pub fn quicksort(to_sort: Vec<i32>) -> Vec<i32> {
-    if to_sort.len() > 2 {
+    if to_sort.len() > 1 {
         let ending_index = to_sort.len() - 1;
         return quicksort_internal(to_sort, 0, ending_index);
     }
