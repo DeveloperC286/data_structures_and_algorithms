@@ -10,3 +10,5 @@ See each algorithms directory for its README.md describing how to perform testin
   + Rust
 - Binary Search
   + Rust
+- Selection Sort
+  + Rust
