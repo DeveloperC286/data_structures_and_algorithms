@@ -6,9 +6,14 @@ Custom implementation of various Data Structures and Algorithms in various langu
 See each algorithms directory for its README.md describing how to perform testing, benchmarking etc.
 
 ## Implemented
-- Quicksort
-  + Rust
 - Binary Search
   + Rust
+
+- Largest Number
+  + Rust
+
+- Quicksort
+  + Rust
+
 - Selection Sort
   + Rust
