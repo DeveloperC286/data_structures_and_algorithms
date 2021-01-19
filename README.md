@@ -3,17 +3,25 @@
 
 Custom implementation of various Data Structures and Algorithms in various languages, experimenting with property based testing and bench-marking.
 
-See each algorithms directory for its README.md describing how to perform testing, benchmarking etc.
+See each directory for its README.md describing how to perform testing, benchmarking etc.
 
-## Implemented
+
+## Data Structures
+
+
+## Searching Algorithms
 - Binary Search
   + Rust
 
-- Largest Number
-  + Rust
 
+## Sorting Algorithms
 - Quicksort
   + Rust
 
 - Selection Sort
+  + Rust
+
+
+## General Algorithms
+- Largest Number
   + Rust
