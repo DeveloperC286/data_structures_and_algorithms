@@ -17,7 +17,6 @@ See each directory for its README.md describing how to perform testing, benchmar
 ## Sorting Algorithms
 - Quicksort
   + Rust
-
 - Selection Sort
   + Rust
 
@@ -25,12 +24,9 @@ See each directory for its README.md describing how to perform testing, benchmar
 ## General Algorithms
 - Factorial
   + Common Lisp
-
 - Fibonacci
   + Common Lisp
-
 - Largest Number
   + Rust
-
 - Sum List
   + Common Lisp
