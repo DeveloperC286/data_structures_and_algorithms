@@ -23,5 +23,7 @@ See each directory for its README.md describing how to perform testing, benchmar
 
 
 ## General Algorithms
+- Factorial
+  + Common Lisp
 - Largest Number
   + Rust
