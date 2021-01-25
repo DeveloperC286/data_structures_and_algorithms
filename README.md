@@ -31,3 +31,6 @@ See each directory for its README.md describing how to perform testing, benchmar
 
 - Largest Number
   + Rust
+
+- Sum List
+  + Common Lisp
