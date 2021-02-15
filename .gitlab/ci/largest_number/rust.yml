@@ -29,7 +29,9 @@ largest-number-rust-compiling:
   image: rust
   script:
     - cd largest_number/rust/
-    - cargo build
+    - cargo build --verbose --workspace
+    - cargo build --verbose --workspace --all-features
+    - cargo build --verbose --workspace --no-default-features
   rules:
     - if: $CI_MERGE_REQUEST_ID
     - if: $CI_COMMIT_BRANCH == "master"
