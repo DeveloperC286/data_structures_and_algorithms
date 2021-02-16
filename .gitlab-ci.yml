@@ -23,6 +23,7 @@ include:
   - local: .gitlab/ci/binary_search/rust.yml
   - local: .gitlab/ci/factorial/common_lisp.yml
   - local: .gitlab/ci/fibonacci/common_lisp.yml
+  - local: .gitlab/ci/largest_number/common_lisp.yml
   - local: .gitlab/ci/largest_number/rust.yml
   - local: .gitlab/ci/quicksort/rust.yml
   - local: .gitlab/ci/selection_sort/rust.yml

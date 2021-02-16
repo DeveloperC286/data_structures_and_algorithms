@@ -27,6 +27,7 @@ See each directory for its README.md describing how to perform testing, benchmar
 - Fibonacci
   + Common Lisp
 - Largest Number
+  + Common Lisp
   + Rust
 - Sum List
   + Common Lisp
