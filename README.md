@@ -19,15 +19,3 @@ See each directory for its README.md describing how to perform testing, benchmar
   + Rust
 - Selection Sort
   + Rust
-
-
-## General Algorithms
-- Factorial
-  + Common Lisp
-- Fibonacci
-  + Common Lisp
-- Largest Number
-  + Common Lisp
-  + Rust
-- Sum List
-  + Common Lisp
