@@ -1,0 +1,13 @@
+[package]
+name = "heapsort"
+version = "0.1.0"
+authors = ["C <DeveloperC@protonmail.com>"]
+edition = "2018"
+
+
+[dependencies]
+
+
+[dev-dependencies]
+rstest = "0.7.0"
+proptest = "1.0.0"
