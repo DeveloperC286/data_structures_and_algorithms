@@ -7,7 +7,8 @@ See each directory for its README.md describing how to perform testing, benchmar
 
 
 ## Data Structures
-
+- Least Recently Used (LRU) Cache
+  + Rust
 
 ## Searching Algorithms
 - Binary Search
