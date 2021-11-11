@@ -2,7 +2,7 @@
 name = "quicksort"
 version = "0.1.1"
 authors = ["C <DeveloperC@protonmail.com>"]
-edition = "2018"
+edition = "2021"
 
 
 [dependencies]
