@@ -1,3 +1,6 @@
+#[cfg(test)]
+extern crate proptest;
+
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
@@ -16,9 +19,6 @@ pub fn heapsort(to_sort: Vec<i32>) -> Vec<i32> {
 
     sorted
 }
-
-#[cfg(test)]
-extern crate proptest;
 
 #[cfg(test)]
 mod tests;

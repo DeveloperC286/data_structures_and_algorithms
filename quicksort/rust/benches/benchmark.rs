@@ -1,4 +1,5 @@
 extern crate criterion;
+
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use quicksort::quicksort;
 

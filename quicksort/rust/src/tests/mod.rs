@@ -1,7 +1,7 @@
-use super::*;
-
 use proptest::prelude::*;
 use rstest::rstest;
+
+use super::*;
 
 #[rstest(
     to_sort_vector,
