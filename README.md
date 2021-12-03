@@ -18,6 +18,8 @@ See each directory for its README.md describing how to perform testing, benchmar
 ## Sorting Algorithms
 - Heapsort
   + Rust
+- Mergesort
+  + Rust
 - Quicksort
   + Rust
 - Selection Sort
