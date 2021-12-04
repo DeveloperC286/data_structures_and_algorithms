@@ -9,5 +9,5 @@ edition = "2021"
 
 
 [dev-dependencies]
-proptest = "0.10.1"
-rand = "0.8.2"
+proptest = "1.0.0"
+rand = "0.8.4"
