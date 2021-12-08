@@ -5,7 +5,7 @@ quicksort-formatting:
     - rustup component add rustfmt
   script:
     - cd quicksort/rust/
-    - cargo fmt --all -- --check
+    - cargo fmt --all -- --check --config=group_imports=StdExternalCrate
   rules:
     - if: $CI_MERGE_REQUEST_ID
 
