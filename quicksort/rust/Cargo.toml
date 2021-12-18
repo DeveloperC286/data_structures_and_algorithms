@@ -9,11 +9,21 @@ edition = "2021"
 
 
 [dev-dependencies]
-rstest = "0.11.0"
+# For parameterized testing.
+rstest = "0.12.0"
+
+# For property-based testing.
 proptest = "1.0.0"
+
+# For benchmarking.
 criterion = "0.3.5"
 
 
 [[bench]]
 name = "benchmark"
 harness = false
+
+
+[profile.release]
+lto = 'fat'
+codegen-units = 1
