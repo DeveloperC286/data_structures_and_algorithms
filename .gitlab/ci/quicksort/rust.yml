@@ -24,6 +24,19 @@ quicksort-linting:
     - if: $CI_MERGE_REQUEST_ID
 
 
+quicksort-version-badge-checking:
+  stage: version-badge-checking
+  image: alpine
+  script:
+    - cd quicksort/rust/
+    # Get current version.
+    - current_version=$(grep "^version = \"${SEMANTIC_VERSIONING_REGEX}\"$" "Cargo.toml" | cut -d '"' -f 2)
+    # Check README version badge and version match.
+    - grep -q "(https://img.shields.io/badge/Version-${current_version}-blue)]" "README.md"
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+
 quicksort-compiling:
   stage: compiling
   image: rust
