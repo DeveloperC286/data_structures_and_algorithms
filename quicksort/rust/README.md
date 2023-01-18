@@ -7,18 +7,18 @@ This implementation has minor optimizations benchmarked and verified statically 
 
 
 ## Building
-```
+```sh
 cargo build --release
 ```
 
 
 ## Testing
-```
+```sh
 cargo test
 ```
 
 
 ## Benchmarking
-```
+```sh
 cargo bench
 ```
