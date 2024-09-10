@@ -34,11 +34,28 @@ check-conventional-commits-linting:
 
 golang-base:
     FROM golang:1.22.1
-    WORKDIR /tmp//data-structures-and-algorithms
     ENV GOPROXY=direct
     ENV CGO_ENABLED=0
     ENV GOOS=linux
     ENV GOARCH=amd64
+
+
+yaml-formatting-base:
+    FROM +golang-base
+    RUN go install github.com/google/yamlfmt/cmd/yamlfmt@v0.10.0
+    COPY ".yamlfmt" "./"
+    DO +COPY_CI_DATA
+
+
+check-yaml-formatting:
+    FROM +yaml-formatting-base
+    RUN ./ci/check-yaml-formatting.sh
+
+
+fix-yaml-formatting:
+    FROM +yaml-formatting-base
+    RUN ./ci/fix-yaml-formatting.sh
+    SAVE ARTIFACT ".github/" AS LOCAL "./"
 
 
 check-github-actions-workflows-linting:
