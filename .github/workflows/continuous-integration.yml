@@ -15,7 +15,7 @@ jobs:
         directory: [binary_search/rust, heapsort/rust, least_recently_used_cache/rust, quicksort/rust, selection_sort/rust, mergesort/rust]
         language: [rust, shell]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15
@@ -31,7 +31,7 @@ jobs:
         directory: [binary_search/rust, heapsort/rust, least_recently_used_cache/rust, quicksort/rust, selection_sort/rust, mergesort/rust]
         language: [rust, shell]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15
@@ -46,7 +46,7 @@ jobs:
       matrix:
         directory: [binary_search/rust, heapsort/rust, least_recently_used_cache/rust, quicksort/rust, selection_sort/rust, mergesort/rust]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15
@@ -61,7 +61,7 @@ jobs:
       matrix:
         directory: [binary_search/rust, heapsort/rust, least_recently_used_cache/rust, quicksort/rust, selection_sort/rust, mergesort/rust]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15
