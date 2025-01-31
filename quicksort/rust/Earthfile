@@ -14,7 +14,7 @@ COPY_SOURCECODE:
 
 
 rust-base:
-    FROM rust:1.70.0@sha256:dbdf8893bda954a9d222e1385516fe583d37befffaa274ab97874ec30fa4bcef
+    FROM rust:1.84.1@sha256:efe14eee1be3fd2462fe349b5948b0d1b179b421c9fb23acb20b579f59299daf
 
 
 rust-formatting-base:
