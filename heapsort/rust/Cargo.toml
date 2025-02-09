@@ -10,10 +10,10 @@ edition = "2021"
 
 [dev-dependencies]
 # For parameterized testing.
-rstest = "0.24.0"
+rstest = "=0.24.0"
 
 # For property-based testing.
-proptest = "1.0.0"
+proptest = "=1.0.0"
 
 
 [profile.release]
