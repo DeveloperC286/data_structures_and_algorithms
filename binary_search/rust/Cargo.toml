@@ -10,8 +10,8 @@ edition = "2021"
 
 [dev-dependencies]
 # For property-based testing.
-proptest = "1.0.0"
-rand = "0.8.4"
+proptest = "=1.0.0"
+rand = "=0.8.4"
 
 
 [profile.release]
