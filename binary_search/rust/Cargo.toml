@@ -10,7 +10,7 @@ edition = "2021"
 
 [dev-dependencies]
 # For property-based testing.
-proptest = "=1.6.0"
+proptest = "=1.7.0"
 rand = "=0.8.4"
 
 

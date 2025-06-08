@@ -13,7 +13,7 @@ edition = "2021"
 rstest = "=0.25.0"
 
 # For property-based testing.
-proptest = "=1.6.0"
+proptest = "=1.7.0"
 
 
 [profile.release]
