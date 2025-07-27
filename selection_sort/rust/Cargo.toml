@@ -10,7 +10,7 @@ edition = "2021"
 
 [dev-dependencies]
 # For parameterized testing.
-rstest = "=0.25.0"
+rstest = "=0.26.1"
 
 # For property-based testing.
 proptest = "=1.7.0"
