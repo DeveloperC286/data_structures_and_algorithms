@@ -15,7 +15,7 @@ jobs:
         language: [rust, shell]
     steps:
       - name: Checkout code.
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
       - name: Check formatting.
         run: cd "${{ matrix.directory}}" && make check-${{ matrix.language }}-formatting
   linting:
@@ -27,7 +27,7 @@ jobs:
         language: [rust]
     steps:
       - name: Checkout code.
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
       - name: Check linting.
         run: cd "${{ matrix.directory}}" && make check-${{ matrix.language }}-linting
   compile:
@@ -38,7 +38,7 @@ jobs:
         directory: [binary_search/rust, heapsort/rust, least_recently_used_cache/rust, quicksort/rust, selection_sort/rust, mergesort/rust]
     steps:
       - name: Checkout code.
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
       - name: Compile.
         run: cd "${{ matrix.directory}}" && make compile
   unit-test:
@@ -49,6 +49,6 @@ jobs:
         directory: [binary_search/rust, heapsort/rust, least_recently_used_cache/rust, quicksort/rust, selection_sort/rust, mergesort/rust]
     steps:
       - name: Checkout code.
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
       - name: Unit test.
         run: cd "${{ matrix.directory}}" && make unit-test
