@@ -16,7 +16,7 @@ rstest = "=0.26.1"
 proptest = "=1.9.0"
 
 # For benchmarking.
-criterion = "=0.8.1"
+criterion = "=0.8.2"
 
 
 [[bench]]
