@@ -1,5 +1,5 @@
 use proptest::prelude::*;
-use rand::Rng;
+use rand::RngExt;
 
 use super::*;
 
@@ -60,8 +60,8 @@ proptest! {
         searching.sort_unstable();
         searching.dedup();
 
-        let mut rng = rand::thread_rng();
-        let expected_index = rng.gen_range(0..searching.len());
+        let mut rng = rand::rng();
+        let expected_index = rng.random_range(0..searching.len());
         let searching_for = searching[expected_index];
 
         // When/Then
@@ -74,11 +74,11 @@ proptest! {
         searching.sort_unstable();
         searching.dedup();
 
-        let mut rng = rand::thread_rng();
-        let mut searching_for = rng.gen_range(-1000000i32..1000000);
+        let mut rng = rand::rng();
+        let mut searching_for = rng.random_range(-1000000i32..1000000);
 
         while searching.contains(&searching_for) {
-            searching_for = rng.gen_range(-1000000i32..1000000);
+            searching_for = rng.random_range(-1000000i32..1000000);
         }
 
         // When/Then
