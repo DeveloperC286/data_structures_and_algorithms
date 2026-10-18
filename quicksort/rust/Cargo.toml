@@ -10,7 +10,7 @@ edition = "2024"
 
 [dev-dependencies]
 # For parameterized testing.
-rstest = "=0.27.0"
+rstest = "=0.28.0"
 
 # For property-based testing.
 proptest = "=1.12.0"
